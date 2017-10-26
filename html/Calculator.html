@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+
+	function parse(input){
+		var input = [];
+		
+		for(var i = 0, c; c = s.charAt(i); i++){
+			if('+-*/'.indexOF(c) > -1) //gibt position wo es erstesmal auftauch, oder -1 wenn gar nicht
+		}
+	}
+
+</script>
+
+</head>
+<body>
+
+<h1>Calculator</h1>
+<p>A simple Calculator</p>
+<form Name="calc">
+
+
+<input type="text" name="display" value="" onkeydown="">
+<input type="button" id="bCalc" onclick="" value="Go">
+
+
+<div class="r1">
+
+<input type="button" id="b1" onclick="calc.display.value+=1" value="1">
+<input type="button" id="b2" onclick="calc.display.value+=2" value="2">
+<input type="button" id="b3" onclick="calc.display.value+=3" value="3">
+
+</div>
+<div class="r2">
+
+<input type="button" id="b4" onclick="calc.display.value+=4" value="4">
+<input type="button" id="b5" onclick="calc.display.value+=5" value="5">
+<input type="button" id="b6" onclick="calc.display.value+=6" value="6">
+
+</div>
+<div class="r3">
+
+<input type="button" id="b7" onclick="calc.display.value+=7" value="7">
+<input type="button" id="b8" onclick="calc.display.value+=8" value="8">
+<input type="button" id="b9" onclick="calc.display.value+=9" value="9">
+<input type="button" id="b0" onclick="calc.display.value+=0" value="0">
+
+</div>
+<div class="r4">
+
+<input type="button" id="bPlus" onclick="calc.display.value+='+'" value="+">
+<input type="button" id="bMinus" onclick="calc.display.value+='-'" value="-">
+<input type="button" id="bMult" onclick="calc.display.value+='*'" value="*">
+<input type="button" id="bDiv" onclick="calc.display.value+='/'" value="/">
+<input type="button" id="bClear" onclick="calc.display.value=''" value="C">
+
+</div>
+
+</form>
+</body>
+</html>
