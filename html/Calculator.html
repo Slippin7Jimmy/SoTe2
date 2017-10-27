@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+<title>Calculator</title>
 <script type="text/javascript">
 
-	function parse(input){
-		var input = [];
+	function calcu(){
+		var input = document.getElementById('display').value;
+		var test = "+-*/";
+		for(var i = 0, len = test.length; i<len; i++){
+			
+			if(input.indexOf(test.charAt(i)) >= 0){
+				var operation = test.charAt(i);
+				<!--alert(i);-->
+				
+				var pos = input.indexOf(test.charAt(i));
+				<!--alert(pos);-->
+			}
+			
+		}
 		
-		for(var i = 0, c; c = s.charAt(i); i++){
-			if('+-*/'.indexOF(c) > -1) //gibt position wo es erstesmal auftauch, oder -1 wenn gar nicht
+		var a = parseInt(input.substring(0,pos));
+		var b = parseInt(input.substring(pos+1, input.length));
+		<!--alert(a);-->
+		<!--alert(operation);-->
+		<!--alert(b);-->
+		switch(operation){
+		case '+':
+			var r = a + b;
+			
+			
+			$("#display").val(r);	
+			break;
+		case '-':
+			var r = a - b;
+			
+			$("#display").val(r);
+			break;
+		case '*':
+			var r = a * b;
+			
+			$("#display").val(r);
+			break;
+		case '/':
+			var r = a / b;
+			
+			$("#display").val(r);
+			break;
+		}
+		
+	}
+	
+	function checkKey(){
+		if(event.keyCode == 13){
+			calcu();
 		}
 	}
+		
 
 </script>
 
@@ -19,11 +65,11 @@
 
 <h1>Calculator</h1>
 <p>A simple Calculator</p>
-<form Name="calc">
 
+<!-- <form Name="calc"> -->
 
-<input type="text" name="display" value="" onkeydown="">
-<input type="button" id="bCalc" onclick="" value="Go">
+<input type="text" id="display" value="" onkeydown="checkKey()">
+<input type="button" id="bCalc" onclick="calcu()" value="Go">
 
 
 <div class="r1">
@@ -34,7 +80,6 @@
 
 </div>
 <div class="r2">
-
 <input type="button" id="b4" onclick="calc.display.value+=4" value="4">
 <input type="button" id="b5" onclick="calc.display.value+=5" value="5">
 <input type="button" id="b6" onclick="calc.display.value+=6" value="6">
@@ -57,7 +102,7 @@
 <input type="button" id="bClear" onclick="calc.display.value=''" value="C">
 
 </div>
+<!-- </form> -->
 
-</form>
 </body>
 </html>
